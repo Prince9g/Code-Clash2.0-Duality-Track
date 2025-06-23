@@ -37,14 +37,14 @@ export async function registerRoutes(app: Express): Promise<Server> {
         });
       }
 
-      // Here we would normally call the Flask backend
-      // For now, we'll simulate the prediction
-      // TODO: Replace with actual Flask API call to localhost:5000/predict
+      // Here we would normally call the YOLOv8 Flask backend
+      // For now, we'll simulate space station object detection
+      // TODO: Replace with actual Flask API call to YOLOv8 model endpoint
       
       const mockPredictions = [
-        { class: 'person', confidence: 0.952 },
-        { class: 'car', confidence: 0.876 },
-        { class: 'bicycle', confidence: 0.731 }
+        { class: 'toolbox', confidence: 0.892, map_score: 0.85 },
+        { class: 'oxygen_tank', confidence: 0.946, map_score: 0.91 },
+        { class: 'fire_extinguisher', confidence: 0.823, map_score: 0.78 }
       ];
 
       // Clean up uploaded file
@@ -52,7 +52,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
       res.json({
         predictions: mockPredictions,
-        message: 'Object detection completed successfully'
+        overall_map: 0.847,
+        processing_time: 0.234,
+        message: 'Space station equipment detection completed successfully'
       });
 
     } catch (error) {
@@ -72,7 +74,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
   // Health check endpoint
   app.get('/api/health', (req, res) => {
-    res.json({ status: 'ok', message: 'AI Vision API is running' });
+    res.json({ status: 'ok', message: 'Orbital Vision Space Station Detection API is operational' });
   });
 
   const httpServer = createServer(app);

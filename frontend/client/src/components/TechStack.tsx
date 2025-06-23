@@ -1,64 +1,64 @@
 import { motion } from "framer-motion";
 import { SiReact, SiTailwindcss, SiPython, SiVite, SiFramer } from "react-icons/si";
-import { Bot, Rocket, Network, Server } from "lucide-react";
+import { Bot, Satellite, Network, Database } from "lucide-react";
 
 const TechStack = () => {
   const technologies = [
     {
-      icon: SiReact,
-      name: "React",
-      description: "Frontend Framework",
+      icon: Bot,
+      name: "YOLOv8",
+      description: "Object Detection",
       color: "text-blue-400",
+      hoverAnimation: "animate-pulse",
+    },
+    {
+      icon: Satellite,
+      name: "Falcon Platform",
+      description: "Digital Twin Sim",
+      color: "text-cyan-400",
       hoverAnimation: "animate-spin",
     },
     {
-      icon: SiTailwindcss,
-      name: "Tailwind CSS",
-      description: "Styling",
-      color: "text-cyan-400",
-      hoverAnimation: "rotate-12",
-    },
-    {
       icon: SiPython,
-      name: "Flask",
-      description: "Backend API",
+      name: "Python ML",
+      description: "Training Pipeline",
       color: "text-yellow-400",
       hoverAnimation: "animate-bounce",
     },
     {
-      icon: Bot,
-      name: "YOLOv8",
-      description: "AI Model",
-      color: "text-purple-400",
-      hoverAnimation: "animate-pulse",
+      icon: SiReact,
+      name: "React",
+      description: "Mission Interface",
+      color: "text-blue-300",
+      hoverAnimation: "rotate-12",
     },
     {
-      icon: SiVite,
-      name: "Vite",
-      description: "Build Tool",
-      color: "text-orange-400",
+      icon: Database,
+      name: "Synthetic Data",
+      description: "Space Station Sets",
+      color: "text-green-400",
       hoverAnimation: "animate-pulse",
     },
     {
       icon: SiFramer,
       name: "Framer Motion",
-      description: "Animations",
+      description: "UI Animations",
       color: "text-pink-400",
-      hoverAnimation: "rotate-12",
-    },
-    {
-      icon: Network,
-      name: "Axios",
-      description: "HTTP Client",
-      color: "text-green-400",
       hoverAnimation: "scale-110",
     },
     {
-      icon: Server,
+      icon: Network,
       name: "REST API",
-      description: "Communication",
-      color: "text-red-400",
+      description: "Data Pipeline",
+      color: "text-orange-400",
       hoverAnimation: "animate-bounce",
+    },
+    {
+      icon: SiVite,
+      name: "Vite",
+      description: "Build System",
+      color: "text-purple-400",
+      hoverAnimation: "rotate-12",
     },
   ];
 
@@ -94,10 +94,10 @@ const TechStack = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-            Technologies Used
+            Mission Technology
           </h2>
           <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-            Built with modern technologies for optimal performance and user experience
+            Advanced space-grade technologies powering reliable object detection systems
           </p>
         </motion.div>
 

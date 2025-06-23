@@ -1,25 +1,25 @@
 import { motion } from "framer-motion";
-import { Brain, Zap, Shield } from "lucide-react";
+import { Satellite, Zap, Shield } from "lucide-react";
 
 const About = () => {
   const features = [
     {
-      icon: Brain,
-      title: "AI-Powered",
-      description: "Advanced machine learning algorithms trained on millions of images to recognize objects with exceptional accuracy.",
-      gradient: "from-indigo-500 to-purple-600",
+      icon: Satellite,
+      title: "Space-Optimized",
+      description: "Trained on synthetic data from Falcon digital twin simulation platform, specifically designed for space station environments.",
+      gradient: "from-blue-500 to-cyan-600",
     },
     {
       icon: Zap,
-      title: "Lightning Fast",
-      description: "YOLOv8 Nano model delivers real-time performance while maintaining high detection accuracy across various object classes.",
+      title: "Mission Critical",
+      description: "Real-time detection of essential equipment: toolboxes, oxygen tanks, and fire extinguishers for operational safety.",
       gradient: "from-green-500 to-emerald-600",
     },
     {
       icon: Shield,
-      title: "Secure & Private",
-      description: "Your images are processed securely and never stored. All detection happens locally on our servers.",
-      gradient: "from-pink-500 to-rose-600",
+      title: "Reliable Detection",
+      description: "Handles challenging space conditions including varied lighting, object angles, and occlusions with high mAP@0.5 accuracy.",
+      gradient: "from-orange-500 to-red-600",
     },
   ];
 
@@ -54,11 +54,11 @@ const About = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
-            About AI Vision
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+            Mission Overview
           </h2>
           <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-            Powered by cutting-edge YOLOv8 technology for real-time object detection
+            Advanced object detection system ensuring space station operational safety through AI-powered equipment identification
           </p>
         </motion.div>
 

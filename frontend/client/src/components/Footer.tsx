@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Eye, Github, Twitter, Linkedin } from "lucide-react";
+import { Satellite, Github, Twitter, Linkedin } from "lucide-react";
 
 const Footer = () => {
   const socialLinks = [
@@ -18,10 +18,10 @@ const Footer = () => {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <div className="w-10 h-10 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center">
-            <Eye className="text-white text-lg" />
+          <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-cyan-600 rounded-lg flex items-center justify-center">
+            <Satellite className="text-white text-lg" />
           </div>
-          <span className="text-2xl font-bold text-slate-100">AI Vision</span>
+          <span className="text-2xl font-bold text-slate-100">Orbital Vision</span>
         </motion.div>
 
         <motion.p
@@ -31,7 +31,7 @@ const Footer = () => {
           transition={{ duration: 0.6, delay: 0.1 }}
           viewport={{ once: true }}
         >
-          Advanced object detection powered by YOLOv8 and modern web technologies
+          Space station object detection powered by YOLOv8 and Falcon digital twin technology
         </motion.p>
 
         <motion.div
@@ -63,7 +63,7 @@ const Footer = () => {
           viewport={{ once: true }}
         >
           <p className="text-slate-500 text-sm">
-            © 2025 AI Vision. Built with React, Flask, and YOLOv8.
+            © 2025 Orbital Vision. Built for Duality AI Space Station Hackathon with YOLOv8.
           </p>
         </motion.div>
       </div>

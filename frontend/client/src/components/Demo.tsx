@@ -1,6 +1,6 @@
 import { useState, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { CloudUpload, Loader2, Search, RefreshCw } from "lucide-react";
+import { Upload, Loader2, Search, RotateCcw } from "lucide-react";
 import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
@@ -29,7 +29,6 @@ const Demo = () => {
         body: formData,
       });
       return response.json();
-
     },
     onSuccess: (data) => {
       setPredictions(data.predictions || []);
@@ -112,11 +111,21 @@ const Demo = () => {
   const confidenceColors = [
     "text-green-400 bg-green-400/20",
     "text-blue-400 bg-blue-400/20",
-    "text-purple-400 bg-purple-400/20",
-    "text-pink-400 bg-pink-400/20",
-    "text-yellow-400 bg-yellow-400/20",
-    "text-red-400 bg-red-400/20",
+    "text-orange-400 bg-orange-400/20",
   ];
+
+  const getEquipmentIcon = (className: string) => {
+    switch (className) {
+      case 'toolbox':
+        return '🧰';
+      case 'oxygen_tank':
+        return '🫁';
+      case 'fire_extinguisher':
+        return '🧯';
+      default:
+        return '📦';
+    }
+  };
 
   return (
     <section id="demo" className="py-20 px-6">
@@ -128,11 +137,11 @@ const Demo = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
-            Try the Demo
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+            Detection Laboratory
           </h2>
           <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-            Upload an image and experience real-time object detection
+            Deploy space station imagery for critical equipment identification
           </p>
         </motion.div>
 
@@ -169,20 +178,20 @@ const Demo = () => {
                     animate={{ y: isDragOver ? -10 : 0 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <CloudUpload className="text-6xl text-indigo-400 mx-auto mb-6" />
+                    <Upload className="text-6xl text-blue-400 mx-auto mb-6" />
                     <h3 className="text-2xl font-semibold mb-4 text-slate-100">
-                      Drop your image here
+                      Deploy Station Imagery
                     </h3>
-                    <p className="text-slate-300 mb-6">or click to browse files</p>
+                    <p className="text-slate-300 mb-6">Upload for equipment detection analysis</p>
                     <motion.button
-                      className="px-6 py-3 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-xl font-semibold hover:from-indigo-600 hover:to-purple-700 transition-all duration-300 text-white"
+                      className="px-6 py-3 bg-gradient-to-r from-blue-500 to-cyan-600 rounded-xl font-semibold hover:from-blue-600 hover:to-cyan-700 transition-all duration-300 text-white"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                     >
-                      Choose File
+                      Select Image
                     </motion.button>
                     <p className="text-sm text-slate-400 mt-4">
-                      Supports JPG, PNG, WEBP • Max 10MB
+                      Station imagery • JPG, PNG, WEBP • Max 10MB
                     </p>
                   </motion.div>
                 </motion.div>
@@ -207,12 +216,12 @@ const Demo = () => {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                   >
-                    <Loader2 className="w-16 h-16 text-indigo-400 mx-auto mb-6 animate-spin" />
+                    <Loader2 className="w-16 h-16 text-blue-400 mx-auto mb-6 animate-spin" />
                     <h3 className="text-2xl font-semibold mb-2 text-slate-100">
-                      Analyzing Image...
+                      Scanning Station...
                     </h3>
                     <p className="text-slate-300">
-                      Our AI is detecting objects in your image
+                      YOLOv8 analyzing for critical equipment
                     </p>
                   </motion.div>
                 ) : (
@@ -225,7 +234,7 @@ const Demo = () => {
                     {/* Image Display */}
                     <div className="glass-dark rounded-2xl p-6">
                       <h3 className="text-xl font-semibold mb-4 text-slate-100">
-                        Uploaded Image
+                        Station Imagery
                       </h3>
                       <div className="aspect-square bg-slate-800 rounded-xl overflow-hidden">
                         <img
@@ -239,7 +248,7 @@ const Demo = () => {
                     {/* Detection Results */}
                     <div className="glass-dark rounded-2xl p-6">
                       <h3 className="text-xl font-semibold mb-4 text-slate-100">
-                        Detection Results
+                        Equipment Detected
                       </h3>
                       
                       {predictions.length > 0 ? (
@@ -272,10 +281,17 @@ const Demo = () => {
                                 whileHover={{ scale: 1.02 }}
                               >
                                 <div className="flex items-center space-x-3">
-                                  <div className={`w-3 h-3 rounded-full ${bgColor.replace("/20", "")}`} />
-                                  <span className="font-medium text-slate-100 capitalize">
-                                    {prediction.class}
-                                  </span>
+                                  <span className="text-lg">{getEquipmentIcon(prediction.class)}</span>
+                                  <div>
+                                    <span className="font-medium text-slate-100 capitalize">
+                                      {prediction.class.replace('_', ' ')}
+                                    </span>
+                                    {prediction.map_score && (
+                                      <p className="text-xs text-slate-400">
+                                        mAP: {(prediction.map_score * 100).toFixed(1)}%
+                                      </p>
+                                    )}
+                                  </div>
                                 </div>
                                 <span className={`font-semibold ${textColor}`}>
                                   {(prediction.confidence * 100).toFixed(1)}%
@@ -292,10 +308,10 @@ const Demo = () => {
                         >
                           <Search className="text-4xl text-slate-400 mx-auto mb-4" />
                           <h4 className="text-lg font-semibold mb-2 text-slate-100">
-                            No Objects Detected
+                            No Equipment Located
                           </h4>
                           <p className="text-slate-400">
-                            Try uploading a different image with clearer objects
+                            Station scan complete - no critical equipment detected in this area
                           </p>
                         </motion.div>
                       )}
@@ -315,8 +331,8 @@ const Demo = () => {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    <RefreshCw size={18} />
-                    Try Another Image
+                    <RotateCcw size={18} />
+                    New Scan
                   </motion.button>
                 </motion.div>
               </motion.div>

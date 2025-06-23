@@ -45,12 +45,12 @@ const Hero = () => {
           transition={{ duration: 0.8 }}
         >
           <motion.h1
-            className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent"
+            className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-cyan-400 to-teal-400 bg-clip-text text-transparent"
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.2 }}
           >
-            AI Vision
+            Orbital Vision
           </motion.h1>
 
           <motion.p
@@ -59,7 +59,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Advanced Object Detection with YOLOv8
+            Space Station Object Detection System
           </motion.p>
 
           <motion.p
@@ -68,7 +68,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            Experience the power of real-time object detection. Upload any image and watch our AI identify objects with incredible accuracy and speed.
+            Advanced YOLOv8-powered detection system for critical space station equipment. Identify toolboxes, oxygen tanks, and fire extinguishers with precision for operational safety.
           </motion.p>
 
           <motion.div
@@ -79,11 +79,11 @@ const Hero = () => {
           >
             <motion.button
               onClick={() => scrollToSection("demo")}
-              className="px-8 py-4 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full font-semibold hover:from-indigo-600 hover:to-purple-700 transform transition-all duration-300 animate-glow text-white"
+              className="px-8 py-4 bg-gradient-to-r from-blue-500 to-cyan-600 rounded-full font-semibold hover:from-blue-600 hover:to-cyan-700 transform transition-all duration-300 animate-glow text-white"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              Try Demo
+              Launch Detection
             </motion.button>
 
             <motion.button
@@ -92,7 +92,7 @@ const Hero = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              Learn More
+              Mission Brief
             </motion.button>
           </motion.div>
         </motion.div>

@@ -71,9 +71,9 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Animated background */
+/* Space-themed animated background */
 .animated-bg {
-  background: linear-gradient(-45deg, hsl(240, 18%, 7%), hsl(251, 44%, 12%), hsl(262, 52%, 25%), hsl(251, 44%, 12%));
+  background: linear-gradient(-45deg, hsl(220, 25%, 8%), hsl(240, 35%, 12%), hsl(260, 45%, 15%), hsl(280, 25%, 10%));
   background-size: 400% 400%;
   animation: gradientShift 15s ease infinite;
 }

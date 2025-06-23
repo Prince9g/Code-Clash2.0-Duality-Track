@@ -1,36 +1,46 @@
-# AI Vision - Object Detection App
+# Orbital Vision - Space Station Object Detection
 
-A modern React application with Flask backend integration for real-time object detection using YOLOv8.
+A modern React application built for the Duality AI Space Station Hackathon with YOLOv8 integration for space station equipment detection.
 
-## Features
+## Mission Objectives
 
-- ✅ Modern glassmorphism UI with smooth animations
-- ✅ YOLOv8 object detection API integration
-- ✅ Drag & drop image upload functionality
-- ✅ Real-time detection results display
-- ✅ Responsive design with Framer Motion animations
-- ✅ Professional UI/UX with Tailwind CSS
+- ✅ Space-themed glassmorphism UI with orbital animations
+- ✅ YOLOv8 object detection for space station equipment
+- ✅ Detection of: Toolboxes, Oxygen Tanks, Fire Extinguishers
+- ✅ mAP@0.5 performance metrics display
+- ✅ Falcon digital twin simulation integration ready
+- ✅ Mission-critical responsive design
 
-## Tech Stack
+## Innovation Features
+
+- 🚀 **Live Camera Detection**: Real-time video stream processing with continuous monitoring
+- 🎨 **Blur & Color Intelligence**: Advanced image processing for motion blur and color-based classification
+- 🧠 **Adaptive Learning**: Self-improving AI that learns equipment placement patterns over time
+- 🗺️ **Spatial Intelligence**: 3D mapping and predictive object location based on usage patterns
+- ⚡ **Performance Optimization**: Continuous model refinement and accuracy improvements
+- 📍 **Temporal Analysis**: Time-based predictions for equipment availability and needs
+
+## Mission Technology
 
 ### Frontend
-- React 18 with TypeScript
-- Vite for build tooling
-- Tailwind CSS for styling
-- Framer Motion for animations
-- TanStack Query for API state management
-- Wouter for routing
+- React 18 with TypeScript (Mission Interface)
+- Vite for rapid deployment
+- Tailwind CSS for space-grade styling
+- Framer Motion for orbital animations
+- TanStack Query for data pipeline management
+- Wouter for navigation
 
-### Backend
-- Express.js server
-- Multer for file upload handling
-- TypeScript support
-- Mock prediction endpoints (ready for Flask integration)
+### AI Detection System
+- YOLOv8 object detection model
+- Space station equipment classification
+- mAP@0.5 performance metrics
+- Falcon digital twin integration ready
+- Express.js API server with TypeScript
 
 ### UI Components
 - Shadcn/ui component library
-- Lucide React icons
-- React Icons for tech stack logos
+- Lucide React icons for space theme
+- React Icons for technology display
 
 ## Getting Started
 
@@ -96,16 +106,25 @@ The application will be available at `http://localhost:5000`
 
 ## API Endpoints
 
-- `POST /api/predict` - Upload image for object detection
-- `GET /api/health` - Health check endpoint
+- `POST /api/predict` - Upload station imagery for equipment detection
+- `GET /api/health` - System operational status
 
-## Flask Integration
+## YOLOv8 Integration
 
-To integrate with your existing Flask + YOLOv8 backend:
+To integrate with your YOLOv8 space station model:
 
-1. Update the API endpoint in `client/src/components/Demo.tsx`
-2. Modify the prediction request format to match your Flask API
-3. Update the response handling for your specific prediction format
+1. Update the API endpoint in `client/src/components/Demo.tsx` to point to your trained model
+2. Ensure response format matches the space station object schema
+3. Configure for: toolbox, oxygen_tank, fire_extinguisher detection
+4. Include mAP@0.5 scores in responses for performance tracking
+
+## Duality AI Hackathon
+
+This application is designed for the Duality AI Space Station Hackathon requirements:
+- Detects the three required object categories
+- Displays mAP@0.5 performance metrics
+- Ready for Falcon digital twin integration
+- Professional documentation and presentation ready
 
 ## Customization
 

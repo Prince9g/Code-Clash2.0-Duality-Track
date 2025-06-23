@@ -1,31 +1,31 @@
 import { motion } from "framer-motion";
-import { Upload, Settings, Eye } from "lucide-react";
+import { Upload, Cpu, Target } from "lucide-react";
 
 const HowToUse = () => {
   const steps = [
     {
       number: 1,
       icon: Upload,
-      title: "Upload Image",
-      description: "Click or drag & drop your image into the upload area. Supports JPG, PNG, and WEBP formats.",
-      gradient: "from-indigo-500 to-purple-600",
-      iconColor: "text-indigo-400",
+      title: "Deploy Image",
+      description: "Upload space station imagery for analysis. System accepts JPG, PNG, and WEBP formats from station cameras.",
+      gradient: "from-blue-500 to-cyan-600",
+      iconColor: "text-blue-400",
     },
     {
       number: 2,
-      icon: Settings,
-      title: "AI Processing",
-      description: "Our YOLOv8 model analyzes your image and identifies all objects with confidence scores.",
+      icon: Cpu,
+      title: "YOLOv8 Analysis",
+      description: "Advanced neural network processes imagery to identify critical equipment with precision mAP@0.5 scoring.",
       gradient: "from-green-500 to-emerald-600",
       iconColor: "text-green-400",
     },
     {
       number: 3,
-      icon: Eye,
-      title: "View Results",
-      description: "See detected objects with bounding boxes, class names, and confidence percentages.",
-      gradient: "from-pink-500 to-rose-600",
-      iconColor: "text-pink-400",
+      icon: Target,
+      title: "Equipment Located",
+      description: "System identifies toolboxes, oxygen tanks, and fire extinguishers with confidence scores for crew safety.",
+      gradient: "from-orange-500 to-red-600",
+      iconColor: "text-orange-400",
     },
   ];
 
@@ -61,10 +61,10 @@ const HowToUse = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent">
-            How to Use
+            Operations Protocol
           </h2>
           <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-            Get started with object detection in three simple steps
+            Deploy space station object detection in three mission-critical steps
           </p>
         </motion.div>
 

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Eye, Menu, X } from "lucide-react";
+import { Satellite, Menu, X } from "lucide-react";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -25,9 +25,8 @@ const Navigation = () => {
 
   const navItems = [
     { id: "home", label: "Home" },
-    { id: "about", label: "About" },
-    { id: "how-to-use", label: "How to Use" },
-    { id: "tech-stack", label: "Tech Stack" },
+    { id: "about", label: "Mission" },
+    { id: "innovations", label: "Features" },
     { id: "demo", label: "Demo" },
   ];
 
@@ -37,26 +36,26 @@ const Navigation = () => {
       animate={{ y: 0 }}
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         isScrolled ? "glass" : "bg-transparent"
-      } px-6 py-4`}
+      } px-6 py-3`}
     >
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         <motion.div 
           className="flex items-center space-x-3"
           whileHover={{ scale: 1.05 }}
         >
-          <div className="w-10 h-10 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center">
-            <Eye className="text-white text-lg" />
+          <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-600 rounded-lg flex items-center justify-center">
+            <Satellite className="text-white" size={16} />
           </div>
-          <span className="text-xl font-bold text-slate-100">AI Vision</span>
+          <span className="text-lg font-bold text-slate-100">Orbital Vision</span>
         </motion.div>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex space-x-8">
+        <div className="hidden md:flex space-x-6">
           {navItems.map((item) => (
             <motion.button
               key={item.id}
               onClick={() => scrollToSection(item.id)}
-              className="text-slate-100 hover:text-indigo-400 transition-colors duration-300"
+              className="text-slate-100 hover:text-cyan-400 transition-colors duration-300 text-sm font-medium"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
