@@ -14,7 +14,7 @@ CORS(app)
 app.config['UPLOAD_FOLDER'] = 'uploads'
 os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
 
-model = YOLO('best.pt')  # Load your trained YOLOv8 model
+model = YOLO('best.pt')  # Loaded trained YOLOv8 model
 
 
 # Route 1: Predict from uploaded image
