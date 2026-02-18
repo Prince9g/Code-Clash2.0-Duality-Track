@@ -24,7 +24,7 @@ const Demo = () => {
       const formData = new FormData();
       formData.append("image", file);
       
-      const response = await fetch("http://127.0.0.1:5001/predict", {
+      const response = await fetch("https://space-object-detection.onrender.com/predict", {
         method: "POST",
         body: formData,
       });
